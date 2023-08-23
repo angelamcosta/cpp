@@ -4,7 +4,6 @@
 
   ![badge](https://raw.githubusercontent.com/angelamcosta/angelamcosta/main/42_badges/cppn.png)
 
-  [![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/built-by-codebabes.svg)](https://forthebadge.com)
 </div>
 
 ### 📋 Description
