@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:39:23 by anlima            #+#    #+#             */
-/*   Updated: 2023/05/30 21:07:02 by anlima           ###   ########.fr       */
+/*   Updated: 2023/10/28 23:14:57 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 int	main(void)
 {
-	// variables
 	std::string	option;
 	PhoneBook	phone_book;
 
@@ -32,7 +31,7 @@ int	main(void)
 		else if (option == "SEARCH")
 			phone_book.searchContact();
 		else
-			std::cout << RED << "You chose the " << option << " option, which is not a valid option." << CLEAR << std::endl;
+			std::cout << RED << "You chose the `" << option << "` option, which is not a valid option." << CLEAR << std::endl;
 	}
 	return (0);
 }
