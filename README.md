@@ -7,7 +7,7 @@
 </div>
 
 ### 📋 Description
-This repository contains a collection of C++ exercises aimed at improving your understanding and skills in C++ programming. The exercises cover various topics, including namespaces, classes, member functions, stdio streams, initialization lists, static, const, and other basic concepts. The subject of the project can be found in this [link](https://raw.githubusercontent.com/angelamcosta/cpp/main/en.subject.pdf).
+This repository contains a collection of C++ exercises aimed at improving your understanding and skills in C++ programming. The exercises cover various topics, including namespaces, classes, member functions, stdio streams, initialization lists, static, const, and other basic concepts.
 
 ### 🔨 General Rules
 - **Compiling:** Compile your code with c++ and the flags `-Wall -Wextra -Werror`. Your code should still compile if you add the flag `-std=c++98`.
