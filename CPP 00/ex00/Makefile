@@ -6,16 +6,19 @@ FLAGS	=	-std=c++98
 
 SRC		=	megaphone.cpp
 
+OBJ		=	$(SRC:.cpp=.o)
+
 all:		$(NAME)
 
 $(NAME):
 			$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
-			$(RM) $(NAME)
+			@$(RM) $(OBJ)
 
 fclean:		clean
+			@$(RM) $(NAME)
 
-re:
-			@$(MAKE) fclean
-			@$(MAKE)
+re:			fclean all
+
+.PHONY:		all clean fclean re
