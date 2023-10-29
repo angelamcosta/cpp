@@ -6,17 +6,17 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:39:23 by anlima            #+#    #+#             */
-/*   Updated: 2023/10/28 23:14:57 by anlima           ###   ########.fr       */
+/*   Updated: 2023/10/29 22:13:42 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-int	main(void)
+int main(void)
 {
-	std::string	option;
-	PhoneBook	phone_book;
+	std::string option;
+	PhoneBook phone_book;
 
 	std::cout << BLUE << "\n\t" << DECORATION << CLEAR << std::endl;
 	std::cout << BLUE << "Welcome to your PhoneBook solution!" << CLEAR << std::endl;
