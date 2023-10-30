@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:39:25 by anlima            #+#    #+#             */
-/*   Updated: 2023/10/30 16:20:33 by anlima           ###   ########.fr       */
+/*   Updated: 2023/10/30 16:26:27 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void PhoneBook::addContact(void)
 	std::string first_name;
 	static int count = 0;
 
-	i = count % 2;
+	i = count % 8;
 	Contact contact = createContact(i);
 	this->phone_book_[i] = contact;
 	first_name = contact.getFirstName();
