@@ -1,10 +1,10 @@
-NAME	=	brains
+NAME	=	violence
 
 RM		=	rm -rf
 CC		=	g++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98
 
-SRC		=	Makefile main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC		=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
