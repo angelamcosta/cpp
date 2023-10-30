@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 21:05:38 by anlima            #+#    #+#             */
-/*   Updated: 2023/10/29 12:28:17 by anlima           ###   ########.fr       */
+/*   Updated: 2023/10/30 16:19:34 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ Contact::Contact(void)
 	this->last_name_ = "";
 	this->nickname_ = "";
 	this->darkest_secret_ = "";
-	this->phone_number_ = "";
+	this->phone_number_ = 0;
 }
 
-Contact::Contact(int id, std::string first_name, std::string last_name, std::string nickname, std::string darkest_secret, std::string phone_number)
+Contact::Contact(int id, std::string first_name, std::string last_name, std::string nickname, std::string darkest_secret, long phone_number)
 {
 	this->id_ = id;
 	this->first_name_ = first_name;
@@ -57,7 +57,7 @@ std::string Contact::getDarkestSecret(void)
 	return this->darkest_secret_;
 }
 
-std::string Contact::getPhoneNumber(void)
+long Contact::getPhoneNumber(void)
 {
 	return this->phone_number_;
 }

@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:39:27 by anlima            #+#    #+#             */
-/*   Updated: 2023/10/29 22:13:49 by anlima           ###   ########.fr       */
+/*   Updated: 2023/10/30 15:54:04 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@
 #define PINK "\033[95;1m"
 #define CLEAR "\033[0m"
 #define DECORATION "ᐠ⸜ˎ_ˏ⸝^⸜ˎ_ˏ⸝^⸜ˎ_ˏ⸝ᐟ"
-
 #include "Contact.hpp"
 #include <iomanip>
+#include <iostream>
+#include <limits>
 
 class PhoneBook
 {
@@ -34,6 +35,9 @@ public:
 	void displayContact(Contact contact);
 	static void promptMenu(void);
 	static Contact createContact(int i);
+	void displayMessage(void);
+	void displayTruncated(Contact contact);
+	void printStr(std::string str);
 };
 
 #endif
