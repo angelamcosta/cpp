@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:06:20 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/03 14:07:39 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/03 16:25:07 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,18 +72,18 @@ void Harl::complain(std::string level)
 	{
 	case 'E':
 		std::cout << "[ ERROR ]" << std::endl;
-		(this->*list[0].f)();
+		(this->*list[3].f)();
 		break ;
 	case 'W':
 		std::cout << "[ WARNING ]" << std::endl;
-		(this->*list[0].f)();
-		(this->*list[1].f)();
+		(this->*list[2].f)();
+		(this->*list[3].f)();
 		break ;
 	case 'I':
 		std::cout << "[ INFO ]" << std::endl;
-		(this->*list[0].f)();
 		(this->*list[1].f)();
 		(this->*list[2].f)();
+		(this->*list[3].f)();
 		break ;
 	case 'D':
 		std::cout << "[ DEBUG ]" << std::endl;
