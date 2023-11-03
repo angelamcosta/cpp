@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:20:05 by anlima            #+#    #+#             */
-/*   Updated: 2023/10/31 17:02:05 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/03 14:25:01 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void findAndReplace(std::string filename, std::string s1, std::string s2)
 	std::fstream outputFile;
 
 	inputFile.open(filename.c_str(), std::ios::in);
-	outputFile.open(std::string(filename + ".replace").c_str(), std::ios::out);
 	if (!inputFile)
 	{
 		std::cout << "Error! Unable to open " << filename << std::endl;
 		return;
 	}
+	outputFile.open(std::string(filename + ".replace").c_str(), std::ios::out);
 	if (!outputFile)
 	{
 		std::cout << "Error! Unable to open " << filename << ".replace" << std::endl;
@@ -57,7 +57,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cout << "Error! Too many args." << std::endl;
+		std::cout << "Error! Usage > ./sed <filename> <s1> <s2>." << std::endl;
 		return (1);
 	}
 	findAndReplace(argv[1], argv[2], argv[3]);
