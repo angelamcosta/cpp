@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 13:45:37 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/05 14:26:51 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/05 18:23:00 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ Fixed& Fixed::operator=(const Fixed &other)
 	return (*this);
 }
 
-Fixed::~Fixed(void)
-{
-	std::cout << "Destructor called" << std::endl;
-}
+Fixed::~Fixed(void) { std::cout << "Destructor called" << std::endl; }
 
 int Fixed::getRawBits(void) const
 {
