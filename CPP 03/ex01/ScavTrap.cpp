@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:21:33 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/05 19:02:41 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/05 19:12:57 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,8 @@ void ScavTrap::attack(const std::string &target)
 	}
 }
 
-void ScavTrap::guardGate(void) { std::cout << "[ScavTrap] " << this->name_ << " is now in Gate keeper mode." << std::endl; }
+void ScavTrap::guardGate(void)
+{
+	if (this->hitPoints_ > 0)
+		std::cout << "[ScavTrap] " << this->name_ << " is now in Gate keeper mode." << std::endl;
+}
