@@ -6,18 +6,19 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:01:51 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/05 18:04:28 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/05 18:23:28 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : name_(name), hitPoints_(10), energyPoints_(10), attackDamage_(0) {}
+ClapTrap::ClapTrap(std::string name) : name_(name), hitPoints_(10), energyPoints_(10), attackDamage_(0) { std::cout << "Default constructor called" << std::endl; }
 
-ClapTrap::ClapTrap(const ClapTrap &other) { *this = other; }
+ClapTrap::ClapTrap(const ClapTrap &other) { *this = other; std::cout << "Copy constructor called" << std::endl; }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
+	std::cout << "Copy assignment operator called" << std::endl;
 	this->name_ = other.name_;
 	this->hitPoints_ = other.hitPoints_;
 	this->energyPoints_ = other.energyPoints_;
@@ -25,7 +26,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 	return (*this);
 }
 
-ClapTrap::~ClapTrap(void) {}
+ClapTrap::~ClapTrap(void) { std::cout << "Destructor called" << std::endl; }
 
 void ClapTrap::attack(const std::string &target)
 {
