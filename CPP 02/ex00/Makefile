@@ -2,7 +2,7 @@ NAME	=	fixed
 
 RM		=	rm -rf
 CC		=	g++
-FLAGS	=	-Wall -Werror -Wextra -std=c++98
+FLAGS	=	-Wall -Werror -Wextra -std=c++98 -O0
 
 SRC		=	main.cpp Fixed.cpp
 
