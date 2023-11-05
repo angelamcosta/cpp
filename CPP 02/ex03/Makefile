@@ -1,0 +1,24 @@
+NAME	=	point
+
+RM		=	rm -rf
+CC		=	g++
+FLAGS	=	-Wall -Werror -Wextra -std=c++98 -O0
+
+SRC		=	main.cpp Fixed.cpp Point.cpp bsp.cpp
+
+OBJ		=	$(SRC:.cpp=.o)
+
+all:		$(NAME)
+
+$(NAME):
+			$(CC) $(FLAGS) $(SRC) -o $(NAME)
+
+clean:
+			@$(RM) $(OBJ)
+
+fclean:		clean
+			@$(RM) $(NAME)
+
+re:			fclean all
+
+.PHONY:		all clean fclean re
