@@ -2,7 +2,7 @@ NAME	=	fragTrap
 
 RM		=	rm -rf
 CXX		=	c++
-FLAGS	=	-Wall -Werror -Wextra -std=c++98 -O0
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -O0
 
 SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
@@ -11,7 +11,7 @@ OBJ		=	$(SRC:.cpp=.o)
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			$(CXX) $(FLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 			@$(RM) $(OBJ)

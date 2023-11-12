@@ -2,7 +2,7 @@ NAME	=	megaphone
 
 RM		=	rm -rf
 CXX		=	c++
-FLAGS	=	-Wall -Werror -Wextra -std=c++98
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 SRC		=	megaphone.cpp
 
@@ -11,7 +11,7 @@ OBJ		=	$(SRC:.cpp=.o)
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			$(CXX) $(FLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 			@$(RM) $(OBJ)
