@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:13:07 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/12 18:35:25 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/12 20:47:28 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,24 @@
 
 Animal::Animal()
 {
+	std::cout << GREEN << "[Animal]" << CLEAR << " Contructor called" << std::endl;
 	this->type = "default";
 }
 
 Animal::Animal(const Animal &src)
 {
+	std::cout << GREEN << "[Animal]" << CLEAR << " Copy contructor called" << std::endl;
 	this->type = src.getType();
 }
 
 Animal::~Animal()
 {
-	std::cout << "[Animal] Destructor called" << std::endl;
+	std::cout << GREEN << "[Animal]" << CLEAR << " Destructor called" << std::endl;
 }
 
 Animal &Animal::operator=(Animal const &rhs)
 {
+	std::cout << GREEN << "[Animal]" << CLEAR << " Copy assignment contructor called" << std::endl;
 	if (this != &rhs)
 		this->type = rhs.getType();
 	return *this;
@@ -36,12 +39,7 @@ Animal &Animal::operator=(Animal const &rhs)
 
 void Animal::makeSound(void) const
 {
-	if (this->type == "cat")
-		std::cout << "[Cat] is mewoing" << std::endl;
-	else if (this->type == "dog")
-		std::cout << "[Dog] is barking" << std::endl;
-	else
-		std::cout << "[Animal] is making animal noises" << std::endl;
+	std::cout << GREEN << "[Animal]" << CLEAR << " is making animal noises" << std::endl;
 }
 
 std::string Animal::getType(void) const

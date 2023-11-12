@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:43:00 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/12 18:44:21 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/12 19:24:17 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class WrongCat : public WrongAnimal
 		WrongCat(WrongCat const &src);
 		~WrongCat();
 		WrongCat &operator=(WrongCat const &rhs);
+		void makeSound(void) const;
 };
 
 #endif

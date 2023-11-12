@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:13:20 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/12 15:19:15 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/12 19:23:49 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Dog : public Animal
 		Dog(Dog const &src);
 		~Dog();
 		Dog &operator=(Dog const &rhs);
+		void makeSound(void) const;
 };
 
 #endif
