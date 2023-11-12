@@ -1,7 +1,7 @@
 NAME	=	harl
 
 RM		=	rm -rf
-CC		=	c++
+CXX		=	c++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 SRC		=	main.cpp Harl.cpp
@@ -11,7 +11,7 @@ OBJ		=	$(SRC:.cpp=.o)
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
 			@$(RM) $(OBJ)
