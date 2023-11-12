@@ -1,7 +1,7 @@
 NAME	=	clapTrap
 
 RM		=	rm -rf
-CC		=	g++
+CC		=	c++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98 -O0
 
 SRC		=	main.cpp ClapTrap.cpp
@@ -10,8 +10,8 @@ OBJ		=	$(SRC:.cpp=.o)
 
 all:		$(NAME)
 
-$(NAME):
-			$(CC) $(FLAGS) $(SRC) -o $(NAME)
+$(NAME):	$(OBJ)
+			$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
 			@$(RM) $(OBJ)
