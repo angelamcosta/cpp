@@ -11,3 +11,4 @@ scavTrap
 fragTrap
 diamondTrap
 *.o
+settings.json
