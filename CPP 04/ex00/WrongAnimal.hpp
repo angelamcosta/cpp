@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:43:10 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/12 19:24:12 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/13 15:09:53 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class WrongAnimal
 		WrongAnimal(WrongAnimal const &src);
 		virtual ~WrongAnimal();
 		WrongAnimal &operator=(WrongAnimal const &rhs);
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
 		std::string getType(void) const;
 };
 
