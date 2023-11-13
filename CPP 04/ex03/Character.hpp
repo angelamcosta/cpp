@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 21:47:30 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/12 23:54:56 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/13 16:55:13 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Character : public ICharacter
 		void equip(AMateria *m);
 		void unequip(int idx);
 		void use(int idx, ICharacter &target);
+		void printMemory(int idx);
 };
 
 #endif

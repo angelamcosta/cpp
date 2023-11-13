@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 21:47:22 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/13 00:02:32 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/13 17:15:01 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,8 @@ Character &Character::operator=(Character const &rhs)
 {
 	if (this != &rhs)
 	{
-		this->name = rhs.getName();
 		for (int i = 0; i < 4; i++)
-		{
-			if (this->inventory[i])
-				delete this->inventory[i];
 			this->inventory[i] = rhs.inventory[i]->clone();
-		}
 	}
 	return *this;
 }
@@ -72,17 +67,27 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx > 3)
+	if (idx < 0 || idx > 3 || !this->inventory[idx])
 		return;
 	this->inventory[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter &target)
 {
-	if (idx < 0 || idx > 3)
+	if (idx < 0 || idx > 3 || !this->inventory[idx])
 	{
 		std::cout << "Index out of bounds" << std::endl;
 		return;
 	}
 	this->inventory[idx]->use(target);
+}
+
+void Character::printMemory(int idx)
+{
+	if (idx < 0 || idx > 3 || !this->inventory[idx])
+	{
+		std::cout << "Index out of bounds" << std::endl;
+		return;
+	}
+	std::cout << this->inventory[idx] << std::endl;
 }

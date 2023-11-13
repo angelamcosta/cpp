@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 21:47:44 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/13 00:08:40 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/13 17:05:09 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ Cure::Cure()
 	this->type = "cure";
 }
 
-Cure::Cure(const Cure &src) : AMateria(src) 
+Cure::Cure(const Cure &src) 
 {
+	this->type = src.type;
 }
 
 Cure::~Cure()
@@ -34,7 +35,7 @@ Cure &Cure::operator=(Cure const &rhs)
 
 AMateria *Cure::clone() const
 {
-	return new Cure(*this);
+	return new Cure();
 }
 
 void Cure::use(ICharacter &target)
