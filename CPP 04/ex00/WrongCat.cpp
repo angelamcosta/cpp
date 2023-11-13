@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:43:07 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/12 20:48:44 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/13 16:09:33 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ WrongCat &WrongCat::operator=(WrongCat const &rhs)
 
 void WrongCat::makeSound(void) const
 {
-	std::cout << MAGENTA << "[WrongCat]" << CLEAR << " 🐈 is mewoing" << std::endl;
+	std::cout << MAGENTA << "[WrongCat]" << CLEAR << " 🐈 is meowing" << std::endl;
 }

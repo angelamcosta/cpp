@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:13:13 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/12 20:47:58 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/13 16:09:33 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ Cat &Cat::operator=(Cat const &rhs)
 
 void Cat::makeSound(void) const
 {
-	std::cout << BLUE << "[Cat]" << CLEAR << " 🐈 is mewoing" << std::endl;
+	std::cout << BLUE << "[Cat]" << CLEAR << " 🐈 is meowing" << std::endl;
 }
