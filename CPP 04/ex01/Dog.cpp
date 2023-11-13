@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:13:18 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/12 21:08:55 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/13 16:26:18 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Dog::Dog(const Dog &src) : Animal(src)
 
 Dog::~Dog()
 {
+	delete this->brain;
 	std::cout << YELLOW << "[Dog]" << CLEAR << " Destructor called" << std::endl;
 }
 
