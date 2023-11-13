@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:13:07 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/12 20:47:28 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/13 16:32:08 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,6 @@ Animal &Animal::operator=(Animal const &rhs)
 	if (this != &rhs)
 		this->type = rhs.getType();
 	return *this;
-}
-
-void Animal::makeSound(void) const
-{
-	std::cout << GREEN << "[Animal]" << CLEAR << " is making animal noises" << std::endl;
 }
 
 std::string Animal::getType(void) const

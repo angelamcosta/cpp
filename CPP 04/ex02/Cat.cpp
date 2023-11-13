@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:13:13 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/13 16:09:33 by anlima           ###   ########.fr       */
+/*   Updated: 2023/11/13 16:26:37 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Cat::Cat(const Cat &src) : Animal(src)
 
 Cat::~Cat()
 {
+	delete this->brain;
 	std::cout << BLUE << "[Cat]" << CLEAR << " Destructor called" << std::endl;
 }
 
