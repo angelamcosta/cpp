@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:11:23 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/21 14:26:44 by anlima           ###   ########.fr       */
+/*   Updated: 2024/01/21 20:59:55 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ class Form
 	class GradeTooLowException : public std::exception {
 		public:
 			virtual const char* what() const throw() { return "Grade too low!"; }
+	};
+	class FormAlreadySigned : public std::exception {
+		public:
+			virtual const char * what() const throw() { return "Form already signed!"; }
 	};
 
 	const std::string getName(void) const;

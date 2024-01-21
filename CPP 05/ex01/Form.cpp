@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:01:01 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/21 14:27:24 by anlima           ###   ########.fr       */
+/*   Updated: 2024/01/21 21:14:22 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ Form &Form::operator=(Form const &rhs)
 
 std::ostream &operator<<(std::ostream &o, Form const &i)
 {
-	o << i.getName();
-	return (o);
+	o << "Form: " << i.getName() << ", Signed: " << (i.getSigned() ? "Yes" : "No") << ", Sign Grade: " << i.getSign() << ", Execute Grade: " << i.getExecute();
+    return o;
 }
 
 const std::string Form::getName(void) const { return (this->name); }
@@ -52,7 +52,11 @@ int	Form::getExecute(void) const { return (this->execute); }
 void		Form::beSigned(Bureaucrat bureaucrat)
 {
 	if (bureaucrat.getGrade() <= this->sign)
+	{
+		if (this->isSigned == true)
+			throw FormAlreadySigned();
 		this->isSigned = true;
+	}
 	else
 		throw Form::GradeTooLowException();
 }
