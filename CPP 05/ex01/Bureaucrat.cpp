@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 13:17:49 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/21 14:18:48 by anlima           ###   ########.fr       */
+/*   Updated: 2024/01/21 14:44:13 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &i)
 {
-	o << "Bureaucrat => " << i.getName() << "\tGrade => " << i.getGrade();
+	o << i.getName() << ", bureaucrat grade " << i.getGrade();
 	return (o);
 }
 
