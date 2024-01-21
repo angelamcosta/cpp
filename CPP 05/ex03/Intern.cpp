@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 20:20:45 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/21 20:36:17 by anlima           ###   ########.fr       */
+/*   Updated: 2024/01/21 21:12:40 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ AForm *Intern::makeForm(std::string name, std::string target)
 	else
 	{
 		std::cout << "Intern could not create " + name + " form" << std::endl;
-		throw couldNotCreateForm();
+		throw CouldNotCreateFormException();
 	}
 	std::cout << "Intern creates " << name << " form" << std::endl;
 	return (form);
