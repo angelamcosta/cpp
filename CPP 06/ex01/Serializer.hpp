@@ -6,16 +6,16 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:57:37 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/24 14:27:01 by anlima           ###   ########.fr       */
+/*   Updated: 2024/01/24 14:32:54 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERIALIZER_HPP
 # define SERIALIZER_HPP
 
+# include "Data.hpp"
 # include <iostream>
 # include <stdint.h>
-# include "Data.hpp"
 
 class Serializer
 {
@@ -23,8 +23,11 @@ class Serializer
 	Serializer()
 	{
 	}
+	Serializer(const Serializer &serializer);
 
   public:
+	~Serializer();
+	Serializer &operator=(Serializer const &rhs);
 	static uintptr_t serialize(Data *ptr);
 	static Data *deserialize(uintptr_t raw);
 };
@@ -41,4 +44,3 @@ class Serializer
 // is a fixed width unsigend integer type defined
 // to be large enough to hold the value of a pointer
 // is a way to perform interger-based operations on pointers
- 

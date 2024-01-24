@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:14:11 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/24 14:27:11 by anlima           ###   ########.fr       */
+/*   Updated: 2024/01/24 15:07:48 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 	data->text = "Lela";
 	u_ptr = Serializer::serialize(data);
 	d_ptr = Serializer::deserialize(u_ptr);
-	std::cout << "value => " << d_ptr->value << "\ttest => " << d_ptr->text << std::endl;
+	std::cout << "value => " << d_ptr->value << "\ttext => " << d_ptr->text << std::endl;
 	delete (data);
 	return (0);
 }
