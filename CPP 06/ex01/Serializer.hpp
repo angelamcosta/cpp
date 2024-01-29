@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:57:37 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/24 14:32:54 by anlima           ###   ########.fr       */
+/*   Updated: 2024/01/29 12:39:17 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@
 class Serializer
 {
   private:
-	Serializer()
-	{
-	}
+	Serializer();
 	Serializer(const Serializer &serializer);
 
   public:
