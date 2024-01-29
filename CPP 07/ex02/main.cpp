@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:29:21 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/25 14:56:04 by anlima           ###   ########.fr       */
+/*   Updated: 2024/01/29 12:30:28 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,13 @@ int	main(void)
     charArray[3] = 'a';
     printArray(charArray);
 	printArraySize(charArray.size());
+
+	try {
+		std::cout << "Trying to acces a invalid position [6] of the charArray" << std::endl;
+		charArray[6] = 'n';
+	} catch (const std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	
 	return (0);
 }
