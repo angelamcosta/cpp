@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:25:28 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/23 18:54:38 by anlima           ###   ########.fr       */
+/*   Updated: 2024/01/29 14:02:21 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class ScalarConverter
 	static void convertToInt(const std::string &literal);
 	static void convertToFloat(const std::string &literal);
 	static void convertToDouble(const std::string &literal);
+	static int	isChar(const std::string &literal);
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:25:26 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/23 20:18:54 by anlima           ###   ########.fr       */
+/*   Updated: 2024/01/29 14:07:37 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void ScalarConverter::convertToChar(const std::string &literal)
 		std::cout << "char: impossible" << std::endl;
 		return ;
 	}
-	if ((iss >> f) && (iss.peek() == EOF || (iss >> c && c == 'f'
+	if (isChar(literal))
+		std::cout << "char: " << literal[0] << std::endl;
+	else if ((iss >> f) && (iss.peek() == EOF || (iss >> c && c == 'f'
 				&& iss.peek() == EOF)))
 	{
 		if (f >= std::numeric_limits<int>::min()
@@ -66,7 +68,9 @@ void ScalarConverter::convertToInt(const std::string &literal)
 		std::cout << "int: impossible" << std::endl;
 		return ;
 	}
-	if ((iss >> f) && (iss.peek() == EOF || (iss >> c && c == 'f'
+	if (isChar(literal))
+		std::cout << "int: " << static_cast<int>(literal[0]) << std::endl;
+	else if ((iss >> f) && (iss.peek() == EOF || (iss >> c && c == 'f'
 				&& iss.peek() == EOF)))
 	{
 		if (f >= std::numeric_limits<int>::min()
@@ -95,7 +99,9 @@ void ScalarConverter::convertToFloat(const std::string &literal)
 		std::cout << "float: nanf" << std::endl;
 		return ;
 	}
-	if ((iss >> f) && (iss.peek() == EOF || (iss >> c && c == 'f'
+	if (isChar(literal))
+		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(literal[0]) << "f" << std::endl;
+	else if ((iss >> f) && (iss.peek() == EOF || (iss >> c && c == 'f'
 				&& iss.peek() == EOF)))
 		std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
 	else
@@ -119,9 +125,18 @@ void ScalarConverter::convertToDouble(const std::string &literal)
 		std::cout << "double: nan" << std::endl;
 		return ;
 	}
-	if ((iss >> d) && (iss.peek() == EOF || (iss >> c && c == 'f'
+	if (isChar(literal))
+		std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(literal[0]) << std::endl;
+	else if ((iss >> d) && (iss.peek() == EOF || (iss >> c && c == 'f'
 				&& iss.peek() == EOF)))
 		std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
 	else
 		std::cout << "double: impossible" << std::endl;
+}
+
+int	ScalarConverter::isChar(const std::string &literal)
+{
+	if ((literal.size() == 1) && (literal[0] >= 97 && literal[0] <= 122) || (literal[0] >= 65 && literal[0] <= 90))
+		return (1);
+	return (0);
 }
