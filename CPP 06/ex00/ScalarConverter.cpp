@@ -6,11 +6,13 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:25:26 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/29 14:07:37 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/07 14:03:12 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+ScalarConverter::ScalarConverter() {}
 
 void ScalarConverter::convert(const std::string &literal)
 {
