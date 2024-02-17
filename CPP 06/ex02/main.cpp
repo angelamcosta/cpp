@@ -73,14 +73,25 @@ void	identify(Base *p)
 void	identify(Base &p)
 {
 	std::cout << YELLOW << "Function to identify using reference called:" << CLEAR << std::endl;
-	if (dynamic_cast<A *>(&p))
+	try {
+		(void)(dynamic_cast<A &>(&p));
 		std::cout << GREEN << CLASS_A << CLEAR << std::endl;
-	else if (dynamic_cast<B *>(&p))
-		std::cout << GREEN << CLASS_B << CLEAR << std::endl;
-	else if (dynamic_cast<C *>(&p))
-		std::cout << GREEN << CLASS_C << CLEAR << std::endl;
-	else
-		std::cout << RED << "This is an invalid type" << CLEAR << std::endl;
+	}
+	catch {
+		try {
+			(void)((dynamic_cast<B &>(&p)));
+			std::cout << GREEN << CLASS_B << CLEAR << std::endl;
+		}
+		catch {
+			try {
+				(void)(dynamic_cast<C *>(&p));
+				std::cout << GREEN << CLASS_C << CLEAR << std::endl;
+			}
+			catch {
+				std::cout << RED << "This is an invalid type" << CLEAR << std::endl;
+			}
+		}
+	}	
 }
 
 int	main(void)
