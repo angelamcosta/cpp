@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:09:17 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/24 15:50:30 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/20 13:12:28 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,20 +74,20 @@ void	identify(Base &p)
 {
 	std::cout << YELLOW << "Function to identify using reference called:" << CLEAR << std::endl;
 	try {
-		(void)(dynamic_cast<A &>(&p));
+		(void)(dynamic_cast<A &>(p));
 		std::cout << GREEN << CLASS_A << CLEAR << std::endl;
 	}
-	catch {
+	catch (std::exception &e1) {
 		try {
-			(void)((dynamic_cast<B &>(&p)));
+			(void)((dynamic_cast<B &>(p)));
 			std::cout << GREEN << CLASS_B << CLEAR << std::endl;
 		}
-		catch {
+		catch (std::exception &e2) {
 			try {
-				(void)(dynamic_cast<C *>(&p));
+				(void)(dynamic_cast<C &>(p));
 				std::cout << GREEN << CLASS_C << CLEAR << std::endl;
 			}
-			catch {
+			catch (std::exception &e3) {
 				std::cout << RED << "This is an invalid type" << CLEAR << std::endl;
 			}
 		}
@@ -105,11 +105,3 @@ int	main(void)
 	delete (base);
 	return (0);
 }
-
-// dynamic_cast can be used for type identifications
-// in polymorphic classes (at least one virtual function)
-// (that is why we create a base class
-// with a virtual destructor)
-
-// if (dynamic_cast<A *>(&p)) reiceves an object of class D
-// the dynamic_cast will return a null pointer

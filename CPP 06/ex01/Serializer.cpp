@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:09:10 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/24 14:34:43 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/20 14:37:28 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Serializer &Serializer::operator=(const Serializer &rhs)
 
 uintptr_t Serializer::serialize(Data *ptr)
 {
-	std::uintptr_t new_ptr = reinterpret_cast<std::uintptr_t>(ptr);
+	uintptr_t new_ptr = reinterpret_cast<uintptr_t>(ptr);
 	return (new_ptr);
 }
 

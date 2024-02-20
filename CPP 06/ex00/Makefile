@@ -1,7 +1,7 @@
 NAME	=	converter
 
-Cxx		=	c++
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98
+CXX		=	c++
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
 RM		=	rm -rf
 
 SRC		=	main.cpp ScalarConverter.cpp
@@ -11,7 +11,7 @@ OBJ		=	$(SRC:.cpp=.o)
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 			$(RM) $(OBJ)

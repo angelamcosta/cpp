@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:57:37 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/29 12:39:17 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/20 13:04:17 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,3 @@ class Serializer
 };
 
 #endif
-
-// serialization
-// often used in low-level programming
-// situations where we would need to store or
-// transmit the value of a pointer in a way that doesnt
-// involve where the actual data it points to
-
-// uintptr_t
-// is a fixed width unsigend integer type defined
-// to be large enough to hold the value of a pointer
-// is a way to perform interger-based operations on pointers

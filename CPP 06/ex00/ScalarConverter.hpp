@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:25:28 by anlima            #+#    #+#             */
-/*   Updated: 2024/02/07 14:03:27 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/20 14:36:04 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,14 @@
 # include <limits>
 # include <sstream>
 # include <string>
+# include <stdio.h>
 
 class ScalarConverter
 {
   private:
-	// making the construtor private in a class means that
-	// the constructor can only be accessed and used in
-	// the class itself, ie, can't be called outside the class,
-	// ie, can`t be instantiated in an external context
 	ScalarConverter();
 
   public:
-	// static in this case means we can use the method
-	// without an instance of the class
 	static void convert(const std::string &literal);
 	static void convertToChar(const std::string &literal);
 	static void convertToInt(const std::string &literal);
