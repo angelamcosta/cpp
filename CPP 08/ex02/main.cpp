@@ -3,26 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 18:26:09 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/28 18:26:10 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/20 13:55:14 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 #include <iostream>
 
-int	main(void)
+int main()
 {
-	MutantStack<int> mutantStack;
-
-	mutantStack.push(1);
-	mutantStack.push(2);
-	mutantStack.push(3);
-	std::cout << "MutantStack elements: ";
-	for (MutantStack<int>::iterator it = mutantStack.begin(); it != mutantStack.end(); ++it)
-		std::cout << *it << " ";
-	std::cout << std::endl;
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(22);
+	mstack.push(2);
+	mstack.push(737);
+	mstack.push(0);
+	mstack.pop();
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::stack<int> s(mstack);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:08:10 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/25 17:41:59 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/20 15:04:15 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,47 +44,33 @@ void Span::addNumber(int number)
 		throw std::out_of_range("The vector is full!");
 	this->data.push_back(number);
 }
+void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	if (this->data.size() == this->size)
+		throw std::out_of_range("The vector is full!");
+	data.insert(data.end(), begin, end);
+}
 
 int Span::shortestSpan(void)
 {
-	int	shortest;
-	int	diff;
-
 	if (this->data.size() <= 1)
 		throw std::out_of_range("The vector is too small to calculate the shortest span!");
-	shortest = INT_MAX;
-	for (unsigned int i = 0; i < this->data.size(); ++i)
+	std::vector<int> copy = data;
+	std::sort(copy.begin(), copy.end());
+	int shortest = copy[1] - copy[0];
+	for (std::vector<int>::iterator i = copy.begin(); i != copy.end() - 1; ++i)
 	{
-		for (unsigned int j = 0; j < this->data.size(); ++j)
-		{
-			if (i == j)
-				continue ;
-			diff = std::abs(this->data[i] - this->data[j]);
-			if (diff < shortest)
-				shortest = diff;
-		}
+		if (abs(*(i + 1) - *i) < shortest)
+			shortest = abs(*(i + 1) - *i);
 	}
 	return (shortest);
 }
 
 int Span::longestSpan(void)
 {
-	int longest;
-	int diff;
-
 	if (this->data.size() <= 1)
 		throw std::out_of_range("The vector is too small to calculate the shortest span!");
-	longest = INT_MIN;
-	for (unsigned int i = 0; i < this->data.size(); ++i)
-	{
-		for (unsigned int j = 0; j < this->data.size(); ++j)
-		{
-			if (i == j)
-				continue ;
-			diff = std::abs(this->data[i] - this->data[j]);
-			if (diff > longest)
-				longest = diff;
-		}
-	}
-	return (longest);
+	int	min = *std::min_element(data.begin(), data.end());
+	int max = *std::max_element(data.begin(), data.end());
+	return (abs(max - min));
 }

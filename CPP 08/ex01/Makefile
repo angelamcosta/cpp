@@ -17,7 +17,7 @@ clean:
 			@$(RM) $(OBJ)
 
 fclean:		clean
-			@$(RM) $@
+			@$(RM) $(NAME)
 
 re:			fclean all
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:30:41 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/25 17:43:18 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/20 15:07:58 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main(void)
 	try
 	{
 		span.addNumber(0);
-		// span.addNumber(1);
-		// span.addNumber(2);
-		// span.addNumber(3);
+		span.addNumber(1);
+		span.addNumber(2);
+		span.addNumber(3);
 		std::cout << "Shortest span: " << span.shortestSpan() << std::endl;
 		std::cout << "Longest span: " << span.longestSpan() << std::endl;
         span.addNumber(5);
