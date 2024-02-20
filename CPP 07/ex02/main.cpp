@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:29:21 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/29 12:30:28 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/20 14:38:07 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	printArraySize(unsigned int size);
 
 template <typename T> void printArray(Array<T> array)
 {
-	int	len;
+	unsigned int	len;
 
 	len = array.size();
 	std::cout << "array items: ";
@@ -33,6 +33,7 @@ void	printArraySize(unsigned int size)
 
 int	main(void)
 {
+	Array<int> emptyArr;
 	Array<int> intArray(3);
 	printArray(intArray);
 	printArraySize(intArray.size());
