@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:25:26 by anlima            #+#    #+#             */
-/*   Updated: 2024/02/20 14:36:40 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/21 14:35:37 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,8 @@ void ScalarConverter::convertToInt(const std::string &literal)
 	char	c;
 
 	std::istringstream iss(literal);
-	if (literal == "nan" || literal == "nanf" || literal[0] == '\0')
-		std::cout << "int: nan" << std::endl;
-	else if (literal == "-inf" || literal == "-inff")
-		std::cout << "int: -inf" << std::endl;
-	else if (literal == "+inff" || literal == "inf" || literal == "+inf" || literal == "inff")
-		std::cout << "int: +inf" << std::endl;
+	if (literal == "nan" || literal == "nanf" || literal[0] == '\0' || literal == "-inf" || literal == "-inff" || literal == "+inff" || literal == "inf" || literal == "+inf" || literal == "inff")
+		std::cout << "int: impossible" << std::endl;
 	else if (isChar(literal) && literal.length() == 1 && literal[0] != '\0')
 		std::cout << "int: " << static_cast<int>(literal[0]) << std::endl;
 	else if ((iss >> i) && (iss.peek() == EOF || (iss >> c && c == 'f'
