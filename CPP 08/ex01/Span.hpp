@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:55:53 by anlima            #+#    #+#             */
-/*   Updated: 2024/02/20 15:00:31 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/25 18:51:33 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ class Span
 	void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 	int shortestSpan();
 	int longestSpan();
-	// TODO : Last but not least, it would be wonderful to fill your Span using a range of iterators.
-	// Making thousands calls to addNumber() is so annoying. Implement a member function
-	// to add many numbers to your Span in one call.
 };
 
 #endif
