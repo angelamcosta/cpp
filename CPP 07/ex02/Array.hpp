@@ -3,25 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:25:29 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/25 14:45:22 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/26 15:31:47 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
-# define ARRAY_HPP
+#define ARRAY_HPP
 
-# include <iostream>
+#include <iostream>
 
-template <class T> class Array
+template <class T>
+class Array
 {
-  private:
+private:
 	T *array;
 	unsigned int len;
 
-  public:
+public:
 	Array();
 	Array(unsigned int n);
 	Array(const Array &copy);
@@ -31,6 +32,6 @@ template <class T> class Array
 	unsigned int size() const;
 };
 
-# include "Array.tpp"
+#include "Array.tpp"
 
 #endif

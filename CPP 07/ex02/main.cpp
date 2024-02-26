@@ -6,18 +6,25 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:29:21 by anlima            #+#    #+#             */
-/*   Updated: 2024/02/20 14:38:07 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/26 17:00:24 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-template <typename T> void	printArray(Array<T> array);
-void	printArraySize(unsigned int size);
+typedef struct	s_point {
+	int	x;
+	int	y;
+}				t_point;
 
-template <typename T> void printArray(Array<T> array)
+template <typename T>
+void printArray(Array<T> array);
+void printArraySize(unsigned int size);
+
+template <typename T>
+void printArray(Array<T> array)
 {
-	unsigned int	len;
+	unsigned int len;
 
 	len = array.size();
 	std::cout << "array items: ";
@@ -26,32 +33,47 @@ template <typename T> void printArray(Array<T> array)
 	std::cout << std::endl;
 }
 
-void	printArraySize(unsigned int size)
+void printArraySize(unsigned int size)
 {
 	std::cout << "array size: " << size << std::endl;
 }
 
-int	main(void)
+int main(void)
 {
 	Array<int> emptyArr;
+	printArray(emptyArr);
+
+	Array<char> charArray(4);
+	charArray[0] = 'L';
+	charArray[1] = 'e';
+	charArray[2] = 'l';
+	charArray[3] = 'a';
+	printArray(charArray);
+	
 	Array<int> intArray(3);
 	printArray(intArray);
-	printArraySize(intArray.size());
 
-    Array<char> charArray(4);
-    charArray[0] = 'L';
-    charArray[1] = 'e';
-    charArray[2] = 'l';
-    charArray[3] = 'a';
-    printArray(charArray);
-	printArraySize(charArray.size());
+	Array<t_point> pointArray(2);
+	t_point a;
+	t_point b;
+	a.x = 1;
+	a.y = 2;
+	b.x = 3;
+	b.y = 4;
+	pointArray[0] = a;
+	pointArray[1] = b;
 
-	try {
+	std::cout << "array items: " << "{ " << pointArray[0].x << ", " << pointArray[0].y << " } { " << pointArray[1].x << ", " << pointArray[1].y << " } " << std::endl;
+
+	try
+	{
 		std::cout << "Trying to acces a invalid position [6] of the charArray" << std::endl;
 		charArray[6] = 'n';
-	} catch (const std::exception& e) {
+	}
+	catch (const std::exception &e)
+	{
 		std::cout << e.what() << std::endl;
 	}
-	
+
 	return (0);
 }

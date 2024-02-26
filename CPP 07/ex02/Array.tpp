@@ -3,33 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:07:17 by anlima            #+#    #+#             */
-/*   Updated: 2024/01/25 14:53:36 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/26 15:31:04 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_TPP
-# define ARRAY_TPP
+#define ARRAY_TPP
 
-# include "Array.hpp"
+#include "Array.hpp"
 
-template <class T> Array<T>::Array()
+template <class T>
+Array<T>::Array()
 {
 	this->array = new T[0];
 	this->len = 0;
 }
 
-template <class T> Array<T>::Array(unsigned int n)
+template <class T>
+Array<T>::Array(unsigned int n)
 {
 	this->array = new T[n];
 	this->len = n;
 }
 
-template <class T> Array<T>::Array(const Array &copy)
+template <class T>
+Array<T>::Array(const Array &copy)
 {
-	unsigned int	len;
+	unsigned int len;
 
 	len = copy.size();
 	this->array = new T[len];
@@ -38,9 +41,10 @@ template <class T> Array<T>::Array(const Array &copy)
 		this->array[i] = copy.array[i];
 }
 
-template <class T> Array<T> &Array<T>::operator=(const Array &rhs)
+template <class T>
+Array<T> &Array<T>::operator=(const Array &rhs)
 {
-	unsigned int	len;
+	unsigned int len;
 
 	len = rhs.size();
 	delete[] this->array;
@@ -51,12 +55,14 @@ template <class T> Array<T> &Array<T>::operator=(const Array &rhs)
 	return (*this);
 }
 
-template <class T> Array<T>::~Array()
+template <class T>
+Array<T>::~Array()
 {
 	delete[] this->array;
 }
 
-template <class T> T &Array<T>::operator[](unsigned int index)
+template <class T>
+T &Array<T>::operator[](unsigned int index)
 {
 	if (index < this->len)
 		return (this->array[index]);
@@ -64,7 +70,8 @@ template <class T> T &Array<T>::operator[](unsigned int index)
 		throw std::out_of_range("Index out of bounds.");
 }
 
-template <class T> unsigned int Array<T>::size(void) const
+template <class T>
+unsigned int Array<T>::size(void) const
 {
 	return (this->len);
 }

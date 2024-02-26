@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:07:26 by anlima            #+#    #+#             */
-/*   Updated: 2024/02/20 13:28:55 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/26 15:45:46 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #define CLEAR "\033[0m"
 #define GREEN "\033[32m"
 
-template <typename T> void testActions(T &arg1, T &arg2)
+template <typename T>
+void testActions(T &arg1, T &arg2)
 {
 	std::cout << "The min between arg1 and arg2 is " << GREEN << min(arg1, arg2) << CLEAR << std::endl;
 	std::cout << "The max between arg1 and arg2 is " << GREEN << max(arg1, arg2) << CLEAR << std::endl;
@@ -24,15 +25,17 @@ template <typename T> void testActions(T &arg1, T &arg2)
 	std::cout << "After swap: arg1 = " << GREEN << arg1 << CLEAR << ", arg2 = " << GREEN << arg2 << CLEAR << std::endl;
 }
 
-int	main(void)
+int main(void)
 {
 	try
 	{
 		int x = 5, y = 10;
+		int f = 5, g = 5;
 		char a = 'a', z = 'z';
 		std::string str1 = "Hello", str2 = "World";
-		
+
 		testActions(x, y);
+		testActions(f, g);
 		testActions(a, z);
 		testActions(str1, str2);
 	}
