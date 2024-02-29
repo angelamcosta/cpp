@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 13:34:04 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/05 15:40:03 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/29 13:51:23 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
+#ifndef FIXED_HPP
 # define FIXED_HPP
 #include <iostream>
 
