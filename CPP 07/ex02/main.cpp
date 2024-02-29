@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:29:21 by anlima            #+#    #+#             */
-/*   Updated: 2024/02/26 17:00:24 by anlima           ###   ########.fr       */
+/*   Updated: 2024/02/29 14:35:57 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ int main(void)
 	printArray(charArray);
 	
 	Array<int> intArray(3);
+	intArray[0] = 0;
+	intArray[1] = 1;
+	intArray[2] = 2;
 	printArray(intArray);
 
 	Array<t_point> pointArray(2);
