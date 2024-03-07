@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/07 17:04:25 by anlima            #+#    #+#             */
+/*   Updated: 2024/03/07 17:05:42 by anlima           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange() { populateExchangeRates(); }
@@ -6,9 +18,7 @@ BitcoinExchange::BitcoinExchange(BitcoinExchange const &copy) { *this = copy; }
 BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &copy)
 {
     if (this !=&copy)
-    {
-
-    }
+        *this = copy;
     return (*this);
 }
 
