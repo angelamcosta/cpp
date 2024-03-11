@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 18:26:09 by anlima            #+#    #+#             */
-/*   Updated: 2024/02/25 18:56:18 by anlima           ###   ########.fr       */
+/*   Updated: 2024/03/11 13:55:54 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,58 @@
 
 int main()
 {
-    MutantStack<int> mutantStack;
+    MutantStack<int> mstack;
 
-    mutantStack.push(1);
-    mutantStack.push(2);
-    mutantStack.push(3);
-    mutantStack.push(4);
-    mutantStack.push(5);
+    mstack.push(1);
+    mstack.push(2);
+    mstack.push(3);
+    mstack.push(4);
+    mstack.push(5);
 
     std::cout << "Elements in the stack (using iterators): ";
-    for (MutantStack<int>::iterator it = mutantStack.begin(); it != mutantStack.end(); ++it)
+    for (MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it)
         std::cout << *it << " ";
     std::cout << std::endl;
 
     std::cout << "Doubling the elements: ";
-    for (MutantStack<int>::iterator it = mutantStack.begin(); it != mutantStack.end(); ++it)
+    for (MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it)
     {
         *it *= 2;
         std::cout << *it << " ";
     }
     std::cout << std::endl;
 
+    std::cout << "The stack size is: " << mstack.size() << std::endl;
+
     std::cout << "Popping elements: ";
-    while (!mutantStack.empty())
+    while (!mstack.empty())
     {
-        std::cout << mutantStack.top() << " ";
-        mutantStack.pop();
+        std::cout << mstack.top() << " ";
+        mstack.pop();
+    }
+    std::cout << std::endl;
+
+    std::cout << "Adding the elements 5 and 17" << std::endl;
+    mstack.push(5);
+    mstack.push(17);
+    std::cout << "Popping the first element: " << mstack.top() << std::endl;
+    mstack.pop();
+    std::cout << "The stack size is: " << mstack.size() << std::endl;
+    mstack.push(3);
+    mstack.push(5);
+    mstack.push(737);
+    mstack.push(0);
+
+    std::cout << "Elements in the stack (using iterators): ";
+    for (MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it)
+        std::cout << *it << " ";
+    std::cout << std::endl;
+
+    std::cout << "Popping elements: ";
+    while (!mstack.empty())
+    {
+        std::cout << mstack.top() << " ";
+        mstack.pop();
     }
     std::cout << std::endl;
 
