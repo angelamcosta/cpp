@@ -22,4 +22,7 @@ serialize
 type
 iter
 array
+easyfind
+span
+mutantstack
 btc
