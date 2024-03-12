@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:17:44 by anlima            #+#    #+#             */
-/*   Updated: 2024/03/11 16:34:14 by anlima           ###   ########.fr       */
+/*   Updated: 2024/03/12 17:17:57 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char**argv)
 {
     if (argc != 2)
     {
-        std::cout << "Error" << std::endl;
+        std::cerr << "Usage => ./RPN \"<valid RPN expression>\"" << std::endl;
         return (1);
     }
     try {
