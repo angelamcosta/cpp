@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:17:47 by anlima            #+#    #+#             */
-/*   Updated: 2024/03/07 17:00:57 by anlima           ###   ########.fr       */
+/*   Updated: 2024/03/11 16:37:16 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void    RPN::calculate(char op)
     int a = _filo.top();
     _filo.pop();
     int temp;
+    if (op == '/' && b == 0)
+        throw std::out_of_range("Error: Division by zero");
     switch (op)
     {
     case '+':
