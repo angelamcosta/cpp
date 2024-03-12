@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 17:06:26 by anlima            #+#    #+#             */
-/*   Updated: 2024/03/12 15:19:58 by anlima           ###   ########.fr       */
+/*   Updated: 2024/03/12 17:06:48 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <iterator>
 #include <cstdlib>
 #include <sstream>
+#include <cstdio>
+#include <ctime>
 
 class PmergeMe
 {
@@ -31,12 +33,16 @@ public:
     ~PmergeMe();
     PmergeMe(PmergeMe const &copy);
     PmergeMe &operator=(PmergeMe const &copy);
-    PmergeMe(int argc, char**argv);
+    PmergeMe(std::vector<int> &vector, std::list<int> &list);
 
     void mergeSort(std::list<int> &list);
+    void sort(std::list<int> &left, std::list<int> &right, std::list<int> &list);
+
     void mergeSort(std::vector<int> &vector);
-    void merge(std::list<int> &left, std::list<int> &right);
-    void merge(std::vector<int> &left, std::vector<int> &right);
+    void sort(std::vector<int> &left, std::vector<int> &right, std::vector<int> &vector);
+
+    void print(std::list<int> &list);
+    void print(std::vector<int> &vector);
 };
 
 #endif

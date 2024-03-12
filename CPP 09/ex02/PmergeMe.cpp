@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 17:11:12 by anlima            #+#    #+#             */
-/*   Updated: 2024/03/12 15:25:36 by anlima           ###   ########.fr       */
+/*   Updated: 2024/03/12 17:07:40 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,140 +32,145 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &copy)
     return (*this);
 }
 
-PmergeMe::PmergeMe(int argc, char**argv)
+PmergeMe::PmergeMe(std::vector<int> &vector, std::list<int> &list)
 {
-    std::vector<int> vector;
-    for (int i = 1; i < argc; ++i)
-    {
-        if (argv[i] != NULL && *argv[i] != '\0')
-        {
-            std::istringstream is(argv[i]);
-            int value;
-            is >> value;
-            if (is.eof())
-                vector.push_back(value);
-        }
-    }
-    
-    std::list<int> list;
-    for (int i = 1; i < argc; ++i)
-    {
-        if (argv[i] != NULL && *argv[i] != '\0')
-        {
-            std::istringstream is(argv[i]);
-            int value;
-            is >> value;
-            if (is.eof())
-                list.push_back(value);
-        }
-    }
-
     std::cout << "Before (vector):\t";
-    for (std::vector<int>::iterator it = vector.begin(); it != vector.end(); ++it)
-        std::cout << *it << " ";
-    std::cout << std::endl;
+    this->print(vector);
 
-    std::cout << "Before (list):\t";
-    for (std::list<int>::iterator it = list.begin(); it != list.end(); ++it)
-        std::cout << *it << " ";
-    std::cout << std::endl;
+    std::cout << "Before (list):\t\t";
+    this->print(list);
     
+    std::clock_t begin_l = clock();
     mergeSort(list);
+    std::clock_t end_l = clock();
+    double time_l = static_cast<double>(end_l - begin_l) / CLOCKS_PER_SEC * 1000000.0;
+    std::cout << "Time to process a range of " << _list.size() << " elements with std::list : " << time_l << " us" << std::endl;
+    
+    std::clock_t begin_v = clock();
     mergeSort(vector);
+    std::clock_t end_v = clock();
+    double time_v = static_cast<double>(end_v - begin_v) / CLOCKS_PER_SEC * 1000000.0;
+    std::cout << "Time to process a range of " << _list.size() << " elements with std::vector : " << time_v << " us" << std::endl;
 
-    std::cout << "After (vector):\t";
-    for (unsigned long i = 0; i < _vector.size(); ++i)
-        std::cout << _vector[i] << " ";
-    std::cout << std::endl;
+    std::cout << "After (vector):\t\t";
+    this->print(vector);
 
-    std::cout << "After (list):\t";
-    for (std::list<int>::iterator it = _list.begin(); it != _list.end(); ++it)
+    std::cout << "After (list):\t\t";
+    this->print(list);
+}
+
+void PmergeMe::print(std::vector<int> &vector)
+{
+    for (std::vector<int>::iterator it = vector.begin(); it != vector.end(); ++it)
         std::cout << *it << " ";
     std::cout << std::endl;
 }
 
+void PmergeMe::print(std::list<int> &list)
+{
+    for (std::list<int>::iterator it = list.begin(); it != list.end(); ++it)
+        std::cout << *it << " ";
+    std::cout << std::endl;
+}
 
 void PmergeMe::mergeSort(std::vector<int> &vector)
 {
     if (vector.size() < 2)
-        return;
+        return ;
 
     int mid = vector.size() / 2;
+
     std::vector<int> left(vector.begin(), vector.begin() + mid);
     std::vector<int> right(vector.begin() + mid, vector.end());
-
+    
     mergeSort(left);
     mergeSort(right);
-    merge(left, right);
+
+    sort(left, right, vector);
+
+    _vector = vector;
+}
+
+void PmergeMe::sort(std::vector<int> &left, std::vector<int> &right, std::vector<int> &vector)
+{
+    int i = 0;
+    while (!left.empty() && !right.empty())
+    {
+        if (*left.begin() < *right.begin())
+        {
+            vector[i++] = left.front();
+            left.erase(left.begin());
+        }
+        else
+        {
+            vector[i++] = right.front();
+            right.erase(right.begin());
+        }
+    }
+
+    while (!left.empty())
+    {
+        vector[i++] = left.front();
+        left.erase(left.begin());
+    }
+    while (!right.empty())
+    {
+        vector[i++] = right.front();
+        right.erase(right.begin());
+    }
 }
 
 void PmergeMe::mergeSort(std::list<int> &list)
 {
     if (list.size() < 2)
-        return;
+        return ;
+
+    int mid = list.size() / 2;
 
     std::list<int> left;
     std::list<int> right;
 
     std::list<int>::iterator it = list.begin();
-
-    unsigned long mid = list.size() / 2;
-    for (unsigned long i = 0; i < mid; ++i)
+    
+    for (int i = 0; i < mid; ++i)
         left.push_back(*it++);
+
     for (unsigned long i = mid; i < list.size(); ++i)
         right.push_back(*it++);
 
     mergeSort(left);
     mergeSort(right);
-    merge(left, right);
+
+    sort(left, right, list);
+
+    _list = list;
 }
 
-void PmergeMe::merge(std::vector<int> &left, std::vector<int> &right)
+void PmergeMe::sort(std::list<int> &left, std::list<int> &right, std::list<int> &list)
 {
-    std::vector<int> merged;
-
+    std::list<int>::iterator it = list.begin();
     while (!left.empty() && !right.empty())
     {
-        if (left.front() <= right.front())
+        if (*left.begin() < *right.begin())
         {
-            std::cout << left.front() << std::endl;
-            merged.push_back(left.front());
+            *it++ = left.front();
             left.erase(left.begin());
         }
         else
         {
-            std::cout << right.front() << std::endl;
-            merged.push_back(right.front());
+            *it++ = right.front();
             right.erase(right.begin());
         }
     }
 
-    merged.insert(merged.end(), left.begin(), left.end());
-    merged.insert(merged.end(), right.begin(), right.end());
-
-    _vector = merged;
-}
-
-void PmergeMe::merge(std::list<int> &left, std::list<int> &right)
-{
-    std::list<int> merged;
-
-    while (!left.empty() && !right.empty())
+    while (!left.empty())
     {
-        if (*left.begin() <= *right.begin())
-        {
-            merged.push_back(*left.begin());
-            left.pop_front();
-        }
-        else
-        {
-            merged.push_back(*right.begin());
-            right.pop_front();
-        }
+        *it++ = left.front();
+        left.erase(left.begin());
     }
-    
-    merged.splice(merged.end(), left);
-    merged.splice(merged.end(), right);
-
-    _list = merged;
+    while (!right.empty())
+    {
+        *it++ = right.front();
+        right.erase(right.begin());
+    }
 }
