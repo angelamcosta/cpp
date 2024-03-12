@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:13:18 by anlima            #+#    #+#             */
-/*   Updated: 2023/11/13 16:26:18 by anlima           ###   ########.fr       */
+/*   Updated: 2024/03/12 14:43:56 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Dog::Dog(const Dog &src) : Animal(src)
 {
 	std::cout << YELLOW << "[Dog]" << CLEAR << " Copy constructor called" << std::endl;
 	this->type = src.getType();
-	this->brain = new Brain();
+	this->brain = new Brain(*src.brain);
 }
 
 Dog::~Dog()
