@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:17:44 by anlima            #+#    #+#             */
-/*   Updated: 2024/03/07 17:01:27 by anlima           ###   ########.fr       */
+/*   Updated: 2024/03/11 16:34:14 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int main(int argc, char**argv)
         for (unsigned long j = 0; j < temp.length(); ++j)
             if (temp[j] != ' ' && temp[j] != '\0') 
             {
+                if (isdigit(temp[j]) && isdigit(temp[j + 1]))
+                    throw std::out_of_range("Error: nb is equal or greater than 10");
                 if (isdigit(temp[j]))
                     rpn.add(temp[j] - '0');
                 else
