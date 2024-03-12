@@ -4,7 +4,7 @@ CXX		=	c++
 CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
 RM	=	rm -rf
 
-SRC	=	main.cpp
+SRC	=	main.cpp PmergeMe.cpp
 OBJ	=	$(SRC:.cpp=.o)
 
 all:	$(NAME)
@@ -18,6 +18,6 @@ clean:
 fclean:		clean
 			$(RM) $(NAME)
 
-re:			fclean clean
+re:			fclean all
 
 .PHONY:		all clean fclean re

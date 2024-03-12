@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:17:44 by anlima            #+#    #+#             */
-/*   Updated: 2024/03/07 17:39:36 by anlima           ###   ########.fr       */
+/*   Updated: 2024/03/12 15:07:26 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,7 @@
 
 int main(int argc, char**argv)
 {
-    std::vector<int> _vector;
-    for (int i = 1; i < argc; ++i)
-    {
-        int value = std::atoi(argv[i]);
-        if (!value && argv[i])
-        {
-            std::cout << "Error" << std::endl;
-            return (1);
-        }
-        _vector.push_back(value);
-    }
-
-    PmergeMe<int> algo(_vector);
-    algo.sort();
+    if (argc > 1)
+        PmergeMe algo(argc, argv);
+    return (0);
 }
