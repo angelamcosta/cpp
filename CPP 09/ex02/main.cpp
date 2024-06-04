@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:17:44 by anlima            #+#    #+#             */
-/*   Updated: 2024/03/12 17:04:09 by anlima           ###   ########.fr       */
+/*   Updated: 2024/06/04 11:42:51 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,32 +19,31 @@ int main(int argc, char **argv)
 {
     if (argc > 1)
     {
-        std::vector<int> vector;
-        for (int i = 1; i < argc; ++i)
+        try
         {
-            if (argv[i] != NULL && *argv[i] != '\0')
+            std::list<int> list;
+            std::vector<int> vector;
+            for (int i = 1; i < argc; ++i)
             {
-                std::istringstream is(argv[i]);
-                int value;
-                is >> value;
-                if (is.eof())
-                    vector.push_back(value);
+                if (argv[i] != NULL && *argv[i] != '\0')
+                {
+                    std::istringstream is(argv[i]);
+                    int value;
+                    is >> value;
+                    if (value < 0)
+                        throw std::invalid_argument("Error: arg must be a positive integer");
+                    if (is.eof()) {
+                        list.push_back(value);
+                        vector.push_back(value);
+                    }
+                }
             }
+            PmergeMe algo(vector, list);
         }
-
-        std::list<int> list;
-        for (int i = 1; i < argc; ++i)
+        catch(const std::exception& e)
         {
-            if (argv[i] != NULL && *argv[i] != '\0')
-            {
-                std::istringstream is(argv[i]);
-                int value;
-                is >> value;
-                if (is.eof())
-                    list.push_back(value);
-            }
+            std::cerr << e.what() << '\n';
         }
-        PmergeMe algo(vector, list);
     }
     return (0);
 }

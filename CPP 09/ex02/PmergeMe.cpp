@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 17:11:12 by anlima            #+#    #+#             */
-/*   Updated: 2024/03/12 17:07:40 by anlima           ###   ########.fr       */
+/*   Updated: 2024/06/04 11:47:50 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,27 +36,25 @@ PmergeMe::PmergeMe(std::vector<int> &vector, std::list<int> &list)
 {
     std::cout << "Before (vector):\t";
     this->print(vector);
-
     std::cout << "Before (list):\t\t";
     this->print(list);
     
-    std::clock_t begin_l = clock();
+    std::clock_t begin_l = std::clock();
     mergeSort(list);
-    std::clock_t end_l = clock();
-    double time_l = static_cast<double>(end_l - begin_l) / CLOCKS_PER_SEC * 1000000.0;
-    std::cout << "Time to process a range of " << _list.size() << " elements with std::list : " << time_l << " us" << std::endl;
-    
-    std::clock_t begin_v = clock();
+    std::clock_t end_l = std::clock();
+    double time_l = static_cast<double>(end_l - begin_l) / CLOCKS_PER_SEC * 1000000;
+    std::clock_t begin_v = std::clock();
     mergeSort(vector);
-    std::clock_t end_v = clock();
-    double time_v = static_cast<double>(end_v - begin_v) / CLOCKS_PER_SEC * 1000000.0;
-    std::cout << "Time to process a range of " << _list.size() << " elements with std::vector : " << time_v << " us" << std::endl;
+    std::clock_t end_v = std::clock();
+    double time_v = static_cast<double>(end_v - begin_v) / CLOCKS_PER_SEC * 1000000;
 
     std::cout << "After (vector):\t\t";
     this->print(vector);
-
     std::cout << "After (list):\t\t";
     this->print(list);
+
+    std::cout << "\n\nTime to process a range of " << _list.size() << " elements with std::list : " << time_l << " us" << std::endl;
+    std::cout << "\n\nTime to process a range of " << _list.size() << " elements with std::vector : " << time_v << " us" << std::endl;
 }
 
 void PmergeMe::print(std::vector<int> &vector)
