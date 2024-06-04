@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 17:04:25 by anlima            #+#    #+#             */
-/*   Updated: 2024/03/07 17:05:42 by anlima           ###   ########.fr       */
+/*   Updated: 2024/06/04 11:04:33 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 BitcoinExchange::BitcoinExchange() { populateExchangeRates(); }
 BitcoinExchange::~BitcoinExchange() {}
-BitcoinExchange::BitcoinExchange(BitcoinExchange const &copy) { *this = copy; }
+BitcoinExchange::BitcoinExchange(BitcoinExchange const &copy) { _exchangeRates = copy._exchangeRates; }
+
 BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &copy)
 {
     if (this !=&copy)
-        *this = copy;
+        _exchangeRates = copy._exchangeRates;
     return (*this);
 }
 
@@ -50,10 +51,10 @@ void BitcoinExchange::populateExchangeRates()
         std::istringstream iss(line);
         std::string date, value;
 
-        if (line == "date,exchange_rate")
+        if (line == "date,exchange_rate" || line == "")
             continue ;
         if (!(std::getline(iss, date, ',') && std::getline(iss, value)))
-            throw std::runtime_error("Error: invalid data format");
+            throw std::runtime_error("Error: invalid csv data format");
         float exchange_rate;
         std::stringstream ss(value);
         if (!(ss >> exchange_rate))
